@@ -1,7 +1,18 @@
 using BLOGN.Data;
+using BLOGN.Data.Repositories.IRepositories;
+using BLOGN.Data.Repositories.Repository;
+using BLOGN.Data.Services;
+using BLOGN.Data.Services.IService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IService<>), typeof(Services<>));
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Add services to the container.
 
