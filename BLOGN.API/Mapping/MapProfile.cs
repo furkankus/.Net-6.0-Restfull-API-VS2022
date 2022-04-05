@@ -9,6 +9,7 @@ namespace BLOGN.API.Mapping
         public MapProfile()
         {
             CreateMap<Category, CategoryDto>().ReverseMap();
+            CreateMap<Article, ArticleDto>().ReverseMap();
         }
     }
 }

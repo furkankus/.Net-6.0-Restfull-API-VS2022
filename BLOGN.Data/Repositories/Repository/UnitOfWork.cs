@@ -17,6 +17,8 @@ namespace BLOGN.Data.Repositories.Repository
         }
         public ICategoryRepository Category => new CategoryRepository(_context);
 
+        public IArticleRepository Article => new ArticleRepository(_context);
+
         public void Dispose()
         {
             _context.Dispose();

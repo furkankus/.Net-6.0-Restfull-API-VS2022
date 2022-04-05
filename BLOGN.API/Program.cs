@@ -11,6 +11,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(IService<>), typeof(Services<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<IArticleService, ArticleService>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
